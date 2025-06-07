@@ -2,7 +2,7 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 
 local window = DrRayLibrary:Load("山脚本[重制版]", "Default")
 
-local tab1 = DrRayLibrary.newTab("通用", "ImageIdHere")
+local tab1 = DrRayLibrary.newTab("通用脚本", "ImageIdHere")
 
 tab1.newLabel("通用")
 
