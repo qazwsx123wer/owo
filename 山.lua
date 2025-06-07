@@ -137,8 +137,8 @@ tab2.newButton("死铁轨", " ", function()
     script_key="PASTEKEYHERE"; (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
 end)
 
-tab2.newButton("鱼", "", function()
-    loadstring(game:HttpGet("https://pastefy.app/xXwLngQD/raw"))()
+tab2.newButton("doors", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E5%B1%B11.lua"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
