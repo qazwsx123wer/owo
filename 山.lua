@@ -145,8 +145,8 @@ tab2.newButton("活过七天", "自动拾取废铁", function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-7-days-to-live-37689"))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("活过七天", "自动装弹砍树夜视", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/7-Days-To-Live-Bhfhd-38003"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
