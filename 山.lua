@@ -133,15 +133,15 @@ tab2.newButton("被遗弃", " ", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
 end)
 
-tab2.newButton("伐木大亨", " ", function()
-    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,86,113,83,83,66,99,100,98})end)())))()
+tab2.newButton("死铁轨1", " ", function()
+    loadstrload)(game:HttpGet("https://getnative.cc/script/loader"))()
 end)
 
-tab2.newButton("死铁轨", "", function()
-    loadstring(game:HttpGet("https://github.com/Synergy-Networks/products/raw/main/Rift/loader.lua"))()
+tab2.newButton("死铁轨2", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
 end)
 
-tab2.newButton("TX种植花园", "即将推出", function()
+tab2.newButton("即将推出", "即将推出", function()
     loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\54\52\68\99\116\76\77\53\47\114\97\119"))()
 end)
 
