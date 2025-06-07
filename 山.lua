@@ -91,7 +91,7 @@ tab1.newButton("工具包", "玩家应该看不见", function()
 end)
 
 tab1.newButton("键盘脚本", "这是电脑版的键盘", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
 end)
 
 tab1.newToggle("夜视", " ", true, function(Value)
