@@ -149,20 +149,24 @@ tab2.newButton("活过七天", "自动装弹砍树夜视", function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/7-Days-To-Live-Bhfhd-38003"))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("导管中心", "缝合脚本", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/useranewrff/roblox/main/%E6%9D%A1%E6%AC%BE%E5%8D%8F%E8%AE%AE.lua"))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("情云脚本", "", function()
+    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("苏脚本", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kukunb/kukulol/refs/heads/main/SUscript.txt"))();
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("死铁轨", "无卡密刷债券", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-Hung-Hub-Auto-Farm-Bonds-No-Key-40315"))()
+end)
+
+tab2.newButton("Doors", "汉化", function()
+    --[[Doors Blackking And BobHub脚本汉化]]loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\54\53\84\119\84\56\106\97"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
