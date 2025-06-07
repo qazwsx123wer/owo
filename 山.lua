@@ -19,14 +19,17 @@ tab1.newButton（"稍等期待","",function()
 
 
 end)
+
 tab1.newButton（"稍等期待","",function()
 
 
 end)
+
 tab1.newButton（"稍等期待","",function()
 
 
 end)
+
 _G.Reantheajfdfjdgse = "susan"
 
 local coregui = game:GetService("CoreGui")
