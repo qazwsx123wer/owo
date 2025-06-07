@@ -4,7 +4,7 @@ local window = DrRayLibrary:Load("山脚本[重制版]", "Default")
 
 local tab1 = DrRayLibrary.newTab("通用", "ImageIdHere")
 
-tab1.newLabel("通用脚本")
+tab1.newLabel("通用")
 
 tab1.newButton("飞行脚本", "飞行可隐藏", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
