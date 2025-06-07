@@ -137,8 +137,8 @@ tab2.newButton("死铁轨", " ", function()
     script_key="PASTEKEYHERE"; (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
 end)
 
-tab2.newButton("活过七天", "", function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/7-Days-To-Live-Bhfhd-38003"))()
+tab2.newButton("河北唐县", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoyi-boop/-/refs/heads/main/YItangxian.lua",true))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
