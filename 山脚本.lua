@@ -129,9 +129,8 @@ end)
 
 local tab2 = DrRayLibrary.newTab("脚本汉化版游戏", "ImageIdLogoHere")
 
-tab2.newButton("云脚本正式版", " ", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/%E4%BA%91%E8%84%9A%E6%9C%ACCloud%20script.lua", true))()
-end)
+tab2.newButton("被遗弃", " ", function()
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
 
 tab2.newButton("云脚本测试版", " ", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/6666666666/main/%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88Xiao%20Yun.lua", true))()
