@@ -91,7 +91,7 @@ tab1.newButton("工具包", "玩家应该看不见", function()
 end)
 
 tab1.newButton("键盘脚本", "这是电脑版的键盘", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
 end)
 
 tab1.newToggle("夜视", " ", true, function(Value)
@@ -133,12 +133,12 @@ tab2.newButton("被遗弃", " ", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
 end)
 
-tab2.newButton("伐木", " ", function()
-    loadstring(game:HttpGet('https://getexploits.com/key-system/',true))('https://da.com/936657404291084298/1006220505583460352/Script.txt')
+tab2.newButton("死铁轨", " ", function()
+    script_key="PASTEKEYHERE"; (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("活过七天", "", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/7-Days-To-Live-Bhfhd-38003"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
