@@ -2,9 +2,9 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 
 local window = DrRayLibrary:Load("山脚本[重制版]", "Default")
 
-local tab1 = DrRayLibrary.newTab("通用", "ImageIdHere")
+local tab1 = DrRayLibrary.newTab("通用脚本", "ImageIdHere")
 
-tab1.newLabel("通用脚本")
+tab1.newLabel("通用")
 
 tab1.newButton("飞行脚本", "飞行可隐藏", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
@@ -91,7 +91,7 @@ tab1.newButton("工具包", "玩家应该看不见", function()
 end)
 
 tab1.newButton("键盘脚本", "这是电脑版的键盘", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
 end)
 
 tab1.newToggle("夜视", " ", true, function(Value)
@@ -133,16 +133,16 @@ tab2.newButton("被遗弃", " ", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
 end)
 
-tab2.newButton("云脚本测试版", " ", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/6666666666/main/%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88Xiao%20Yun.lua", true))()
+tab2.newButton("死铁轨1", " ", function()
+    loadstrload)(game:HttpGet("https://getnative.cc/script/loader"))()
+end)
+
+tab2.newButton("死铁轨2", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
-end)
-
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\54\52\68\99\116\76\77\53\47\114\97\119"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
