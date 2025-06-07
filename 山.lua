@@ -133,16 +133,16 @@ tab2.newButton("被遗弃", " ", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
 end)
 
-tab2.newButton("云脚本测试版", " ", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/6666666666/main/%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88Xiao%20Yun.lua", true))()
+tab2.newButton("伐木大亨", " ", function()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,86,113,83,83,66,99,100,98})end)())))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("死铁轨", "", function()
+    loadstring(game:HttpGet("https://github.com/Synergy-Networks/products/raw/main/Rift/loader.lua"))()
 end)
 
-tab2.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab2.newButton("TX种植花园", "即将推出", function()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\102\121\46\97\112\112\47\54\52\68\99\116\76\77\53\47\114\97\119"))()
 end)
 
 tab2.newButton("即将推出", "即将推出", function()
