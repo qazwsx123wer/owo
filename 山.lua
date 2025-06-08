@@ -228,7 +228,6 @@ end)
 tab4.newButton("圈钱死妈死全家", "即将推出", function()
     print('Hello!')
 end)
-
 --[[
 tab2.newLabe1("Hello, this is Tab 2.")
 tab2.newButton("Button", "Prints Hello!", function()
