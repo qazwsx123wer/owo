@@ -185,7 +185,7 @@ tab2.newButton("即将推出", "即将推出", function()
     print('Hello!')
 end)
 
-local tab3 = DrRayLibrary.newtab("大型脚本中心","ImageIdLogoHere")
+local tab3 = DrRayLibrary.newTab("大型脚本中心","ImageIdLogoHere")
 
 tab3.newButton("即将推出", "即将推出", function()
     print('Hello!')
