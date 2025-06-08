@@ -199,7 +199,7 @@ tab3.newButton("即将推出", "即将推出", function()
     print('Hello!')
 end)
 
-local tab4 = DrRayLibrary.newTab("关于", "ImageIdLogoHere")
+local tab4 = DrRayLibrary.newTab("关于", "ImageIdHere")
 
 tab4.newLabe1("作者消逝（山）")
 tab4.newLabe1("QQ群1054212823")
