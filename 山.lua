@@ -201,13 +201,12 @@ end)
 
 local tab4 = DrRayLibrary.newTab("关于", "ImageIdLogoHere")
 
-tab4.newLabe2("作者owo")
-tab4.newLabe2("QQ3405113730")
-tab4.newLabe2("加我即可找到群")
-tab4.newLabe2("当前版本V1.0.1")
-tab4.newLabe2("山脚本使用永久免费")
+tab4.newLabe1("作者消逝（山）")
+tab4.newLabe1("QQ群1054212823")
+tab4.newLabe1("当前版本v1.0.01")
+tab4.newLabe1("此脚本免费不可缺钱")
 --[[
-tab2.newLabel("Hello, this is Tab 2.")
+tab2.newLabe1("Hello, this is Tab 2.")
 tab2.newButton("Button", "Prints Hello!", function()
     print('Hello!')
 end)
