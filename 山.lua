@@ -209,7 +209,7 @@ end)
 
 tab3.newButton("即将推出", "即将推出", function()
     print('Hello!')
-end
+end)
 
 local tab4 = DrRayLibrary.newTab("关于", "ImageIdHere")
 
