@@ -205,6 +205,7 @@ tab4.newLabe1("作者消逝（山）")
 tab4.newLabe1("QQ群1054212823")
 tab4.newLabe1("当前版本v1.0.01")
 tab4.newLabe1("此脚本免费不可缺钱")
+
 --[[
 tab2.newLabe1("Hello, this is Tab 2.")
 tab2.newButton("Button", "Prints Hello!", function()
