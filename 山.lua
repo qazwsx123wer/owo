@@ -187,6 +187,12 @@ end)
 
 local tab3 = DrRayLibrary.newTab("关于", "ImageIdLogoHere")
 
+tab3.newButton("即将推出", "即将推出", function()
+    print('Hello!')
+end)
+
+local tab4 = DrRayLibrary.newTab("关于", "ImageIdLogoHere")
+
 tab3.newLabel("作者owo")
 tab3.newLabel("QQ3405113730")
 tab3.newLabel("加我即可找到群")
