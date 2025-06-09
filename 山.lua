@@ -169,7 +169,7 @@ tab2.newButton("Doors", "汉化", function()
     --[[Doors Blackking And BobHub脚本汉化]]loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\54\53\84\119\84\56\106\97"))()
 end)
 
-tab2.newButton("NN中心", "", function()
+tab2.newButton("", "", function()
     print('Hello!')
 end)
 
