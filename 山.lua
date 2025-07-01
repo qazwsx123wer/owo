@@ -170,7 +170,7 @@ tab2.newButton("Doors", "汉化", function()
 end)
 
 tab2.newButton("NN中心", "", function()
-    print('Hello!')
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/main/RbHUB-v_1.2.3"))()
 end)
 
 tab2.newButton("XK中心", "", function()
