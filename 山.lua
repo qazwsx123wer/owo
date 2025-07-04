@@ -163,6 +163,7 @@ end)
 
 tab2.newButton("墨竹会", "", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
+end)
 
 tab2.newButton("即将推出", "即将推出", function()
     print('Hello!')
