@@ -161,6 +161,9 @@ tab2.newButton("恶魔学", "透视ESP", function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Demonology-GHOST-ESP-FINGERPRINT-ESP-CURSED-ITEM-ESP-28153"))()
 end)
 
+tab2.newButton("压力", "", function()
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
+
 tab2.newButton("即将推出", "即将推出", function()
     print('Hello!')
 end)
