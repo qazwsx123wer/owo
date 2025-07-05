@@ -161,6 +161,18 @@ tab2.newButton("恶魔学", "透视ESP", function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Demonology-GHOST-ESP-FINGERPRINT-ESP-CURSED-ITEM-ESP-28153"))()
 end)
 
+tab2.newButton("死铁轨", "刷债券", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/m00ndiety/OP-AUTO-BONDS-V3/refs/heads/main/Keyless-BONDS-v3"))()
+end)
+
+tab2.newButton("压力", "中文翻译", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ohiojjj/78/main/.github/workflows/Protected_5509067665689579.lua'))()
+end)
+
+tab2.newButton("黑火药脚本", "清风", function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\34\104\116\116\112\115\58\47\47\102\114\101\101\110\111\116\101\46\98\105\122\47\114\97\119\47\109\117\122\110\104\101\114\104\114\117\34\41\44\116\114\117\101\41\41\40\41\10")()
+end)
+
 tab2.newButton("即将推出", "即将推出", function()
     print('Hello!')
 end)
