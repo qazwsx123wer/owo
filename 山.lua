@@ -183,8 +183,8 @@ end)
 
 local tab3 = DrRayLibrary.newTab("大型脚本中心","ImageIdHere")
 
-tab3.newButton("RB中心", "中心", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Yungengxin/roblox/refs/heads/main/RbHub-OHIO"))()
+tab3.newButton("走马观花X", "卡密dajibaccb", function()
+    _ZOUMAGUANHUAGUI='走马观花X'loadstring(game:HttpGet"https://pastebin.com/raw/XPTiVKWx")()
 end)
 
 tab3.newButton("导管中心", "中心", function()
