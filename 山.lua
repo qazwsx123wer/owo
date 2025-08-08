@@ -183,7 +183,7 @@ end)
 
 local tab3 = DrRayLibrary.newTab("大型脚本中心","ImageIdHere")
 
-tab3.newButton("走马观花X群947178829", "卡密dajibaccb", function()
+tab3.newButton("走马观花X群947178829", "卡密随机时间刷新", function()
     _ZOUMAGUANHUAGUI='走马观花X'loadstring(game:HttpGet"https://pastebin.com/raw/XPTiVKWx")()
 end)
 
