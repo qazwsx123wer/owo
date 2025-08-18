@@ -41,7 +41,7 @@ pcall(function()
             Url = url,
             Method = "GET",
             Headers = {
-                ["Authorization"] = "Bearer github令牌",
+                ["Authorization"] = "Bearer github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",
                 ["Accept"] = "application/vnd.github.v3+json"
             }
         })
