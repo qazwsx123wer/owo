@@ -1,9 +1,3 @@
-{
-
-  "3490230512": true,
-  "": true
-  
-}
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 
 local window = DrRayLibrary:Load("山脚本[重制版]", "Default")
