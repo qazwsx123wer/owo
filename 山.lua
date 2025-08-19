@@ -129,8 +129,8 @@ end)
 
 local tab2 = DrRayLibrary.newTab("脚本汉化版游戏", "ImageIdLogoHere")
 
-tab2.newButton("被遗弃", " ", function()
-    loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
+tab2.newButton("山通用", " ", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E5%B1%B1%E8%84%9A%E6%9C%AC.lua"))()
 end)
 
 tab2.newButton("死铁轨", " ", function()
