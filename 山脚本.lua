@@ -63,6 +63,11 @@ local credits = creds:section("UI设置",true)
             game:GetService("CoreGui")["frosty"].Main.Style = "Custom"
         end
     end)
+local gn = window:Tab("山脚本通用")
+local gn = gn:section("开发工具",true)
+gn:Button("111111",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end)
 local gn = window:Tab("开发用具")
 local gn = gn:section("开发工具",true)
 gn:Button("Dex",function()
