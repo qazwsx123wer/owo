@@ -100,12 +100,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/refs/h
 end)
 local gn = window:Tab("音乐")
 local gn = gn:section("MAIN",true)
-Main:Button("义勇军进行曲", function()
+gn:Button("义勇军进行曲",function()
+Main:Button("进行曲", function()
     local sound = Instance.new("Sound")
     sound.SoundId = "rbxassetid://1845918434"
     sound.Parent = game.Workspace
     sound:Play()
     end)
+end)
 local playerr = window:Tab("玩家")
 local playerr = playerr:section("玩家功能",true)
 playerr:Button("爬墙走",function()
