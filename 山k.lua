@@ -8,7 +8,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Icon = "rbxthumb://type=Asset&id=17245602801&w=150&h=150";
 Duration = 15})
 -- the stuff for preperation
-local key = "666789113" -- put youre key in here
+local key = "山" -- put youre key in here
 
 local keylink = "群号" -- put your key link here
 
@@ -78,7 +78,7 @@ title.BorderSizePixel = 0
 title.Position = UDim2.new(0, 0, 0.0323624611, 0)
 title.Size = UDim2.new(1, 0, 0.197411001, 0)
 title.Font = Enum.Font.Gotham
-title.Text = "走马观花X卡密验证"
+title.Text = "走马观花卡密验证"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
