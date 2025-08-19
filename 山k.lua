@@ -10,13 +10,13 @@ Duration = 15})
 -- the stuff for preperation
 local key = "山" -- put youre key in here
 
-local keylink = "群号" -- put your key link here
+local keylink = "群号1054212823" -- put your key link here
 
 local nameofthescript = "山" --put your script name here. leave blank too leave blank ig
 
 local whoisitmadeby = "扫橘子皮" -- put your name here
 
-local thenoteofthekey = "群号" --note you add here. leave blank to not have a note.
+local thenoteofthekey = "群号1054212823" --note you add here. leave blank to not have a note.
 
 
 -- Instances:
@@ -78,7 +78,7 @@ title.BorderSizePixel = 0
 title.Position = UDim2.new(0, 0, 0.0323624611, 0)
 title.Size = UDim2.new(1, 0, 0.197411001, 0)
 title.Font = Enum.Font.Gotham
-title.Text = "走马观花卡密验证"
+title.Text = "山卡密验证"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextScaled = true
 title.TextSize = 14.000
