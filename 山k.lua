@@ -8,7 +8,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Icon = "rbxthumb://type=Asset&id=17245602801&w=150&h=150";
 Duration = 15})
 -- the stuff for preperation
-local key = "山" -- put youre key in here
+local key = "520" -- put youre key in here
 
 local keylink = "群号1054212823" -- put your key link here
 
