@@ -107,10 +107,11 @@ playerr:Button("飞行V3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/385j8888/ZOUMAGUIX/refs/heads/main/%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%ACV3(%E5%85%A8%E6%B8%B8%E6%88%8F%E9%80%9A%E7%94%A8).txt"))()
 end)
 local playerr = window:Tab("自瞄")
-local playerr = playerr:section("自瞄",true)
+local gn = gn:section("玩家自瞄",true)
 gn:Button("阿尔宙斯自瞄",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))()
 end)
+
 gn:Button("绕大部分服务器反作弊",function()
 for _, Value in next, getgc(true) do
     if typeof(Value) == "table" then
