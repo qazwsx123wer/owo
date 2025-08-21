@@ -63,6 +63,14 @@ local credits = creds:section("UI设置",true)
             game:GetService("CoreGui")["frosty"].Main.Style = "Custom"
         end
     end)
+local gn = window:Tab("音乐")
+local gn = gn:section("音乐",true)
+gn:Button("大河之剑",function()
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://7801102946"
+sound.Parent = game.Workspace
+sound:Play(10)
+end)
 local gn = window:Tab("山脚本通用")
 local gn = gn:section("通用",true)
 gn:Button("山1",function()
