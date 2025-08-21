@@ -1,5 +1,3 @@
-lua
-  
 local SimpleUI = {}
 SimpleUI.__index = SimpleUI
 
