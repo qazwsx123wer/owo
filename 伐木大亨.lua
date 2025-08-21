@@ -1,93 +1,85 @@
-local ui = {
-    -- 按钮属性
-    button = {
-        x = 150,
-        y = 200,
-        width = 200,
-        height = 50,
-        text = "点击我",
-        color = {0.2, 0.6, 1},       -- 正常颜色（蓝）
-        hoverColor = {0.3, 0.7, 1},  -- 悬停颜色
-        pressColor = {0.1, 0.5, 0.9},-- 点击颜色
-        isHovered = false,
-        isPressed = false
-    },
-    -- 文本标签
-    label = {
-        text = "极简 Lua UI 示例",
-        x = 150,
-        y = 100,
-        color = {0.1, 0.1, 0.1}      -- 深灰色
-    },
-    -- 交互状态文本
-    statusText = "等待操作...",
-    statusY = 300
-}
+local SimpleUI = {}
+SimpleUI.__index = SimpleUI
 
--- 初始化函数
-function love.load()
-    love.window.setTitle("极简 Lua UI")
-    love.window.setMode(500, 400)  -- 设置窗口大小
+function SimpleUI.new(screen)
+    local self = setmetatable({}, SimpleUI)
+    self.screen = screen  -- 父容器（如 Roblox 中的 ScreenGui）
+    self.elements = {}    -- 存储 UI 元素
+    return self
 end
 
--- 更新逻辑
-function love.update(dt)
-    -- 检测鼠标是否悬停在按钮上
-    local mx, my = love.mouse.getPosition()
-    ui.button.isHovered = 
-        mx >= ui.button.x and mx <= ui.button.x + ui.button.width and
-        my >= ui.button.y and my <= ui.button.y + ui.button.height
+function SimpleUI:addLabel(props)
+    local label = Instance.new("TextLabel")
+    label.Name = props.name or "Label"
+    label.Position = props.position or UDim2.new(0.5, -150, 0.2, 0)
+    label.Size = props.size or UDim2.new(0, 300, 0, 40)
+    label.BackgroundTransparency = 1
+    label.Text = props.text or "文本标签"
+    label.TextColor3 = props.color or Color3.new(0, 0, 0)
+    label.TextScaled = true
+    label.Parent = self.screen
+    table.insert(self.elements, label)
+    return label
 end
 
--- 绘制 UI
-function love.draw()
-    -- 绘制标题文本
-    love.graphics.setColor(ui.label.color)
-    love.graphics.setFont(love.graphics.newFont(20))
-    love.graphics.print(ui.label.text, ui.label.x, ui.label.y)
+function SimpleUI:addButton(props)
+    local button = Instance.new("TextButton")
+    button.Name = props.name or "Button"
+    button.Position = props.position or UDim2.new(0.5, -100, 0.5, -25)
+    button.Size = props.size or UDim2.new(0, 200, 0, 50)
+    button.BackgroundColor3 = props.color or Color3.new(0.2, 0.6, 1)
+    button.Text = props.text or "点击按钮"
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.TextScaled = true
+    button.BorderRadius = 8  -- 圆角效果
+    button.Parent = self.screen
+    table.insert(self.elements, button)
 
-    -- 绘制按钮（根据状态切换颜色）
-    if ui.button.isPressed then
-        love.graphics.setColor(ui.button.pressColor)
-    elseif ui.button.isHovered then
-        love.graphics.setColor(ui.button.hoverColor)
-    else
-        love.graphics.setColor(ui.button.color)
+    button.MouseEnter:Connect(function()
+        button.BackgroundColor3 = props.hoverColor or Color3.new(0.3, 0.7, 1)
+    end)
+    button.MouseLeave:Connect(function()
+        button.BackgroundColor3 = props.color or Color3.new(0.2, 0.6, 1)
+    end)
+    button.MouseButton1Click:Connect(function()
+        if props.onClick then
+            props.onClick()  -- 点击回调
+        end
+    end)
+
+    return button
+end
+
+function SimpleUI:destroy()
+    for _, element in ipairs(self.elements) do
+        element:Destroy()
     end
-    love.graphics.rectangle("fill", ui.button.x, ui.button.y, ui.button.width, ui.button.height, 8)  -- 圆角矩形
-
-    -- 绘制按钮文本
-    love.graphics.setColor(1, 1, 1)  -- 白色文本
-    love.graphics.setFont(love.graphics.newFont(16))
-    local textWidth = love.graphics.getFont():getWidth(ui.button.text)
-    local textX = ui.button.x + (ui.button.width - textWidth) / 2  -- 文本居中
-    local textY = ui.button.y + (ui.button.height - 20) / 2
-    love.graphics.print(ui.button.text, textX, textY)
-
-    -- 绘制状态文本
-    love.graphics.setColor(0.5, 0.2, 0.2)  -- 暗红色
-    love.graphics.setFont(love.graphics.newFont(14))
-    love.graphics.print(ui.statusText, ui.label.x, ui.statusY)
+    self.elements = {}
 end
 
--- 鼠标按下事件
-function love.mousepressed(x, y, button)
-    if button == 1 and ui.button.isHovered then  -- 左键点击
-        ui.button.isPressed = true
-        ui.statusText = "按钮被点击！"
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "SimpleUIExample"
+screenGui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+
+local ui = SimpleUI.new(screenGui)
+
+ui:addLabel({
+    text = "合法 Lua UI 示例",
+    position = UDim2.new(0.5, -150, 0.1, 0),
+    color = Color3.new(0.2, 0.2, 0.2)
+})
+
+local statusLabel = ui:addLabel({
+    text = "等待操作...",
+    position = UDim2.new(0.5, -150, 0.7, 0),
+    color = Color3.new(0.5, 0.2, 0.2)
+})
+
+ui:addButton({
+    text = "点击我",
+    onClick = function()
+        statusLabel.Text = "按钮已点击！时间: " .. os.clock()
     end
-end
+})
 
--- 鼠标释放事件
-function love.mousereleased(x, y, button)
-    if button == 1 then
-        ui.button.isPressed = false
-    end
-end
-
--- 键盘事件（按 ESC 退出）
-function love.keypressed(key)
-    if key == "escape" then
-        love.event.quit()
-    end
-end
+print("UI 已加载完成（合法场景）")
