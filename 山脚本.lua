@@ -71,10 +71,11 @@ sound.SoundId = "rbxassetid://7801102946"
 sound.Parent = game.Workspace
 sound:Play(10)
 end)
-local gn = window:Tab("山脚本通用")
-local gn = gn:section("通用",true)
-gn:Button("山1",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E5%B1%B1.lua"))()
+gn:Button("寂静岭结束音乐",function()
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://128051266478771"
+sound.Parent = game.Workspace
+sound:Play(10)
 end)
 local gn = window:Tab("战争大亨")
 local gn = gn:section("通用",true)
