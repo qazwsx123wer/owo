@@ -63,6 +63,11 @@ local credits = creds:section("UI设置",true)
             game:GetService("CoreGui")["frosty"].Main.Style = "Custom"
         end
     end)
+local gn = window:Tab("山2")
+local gn = gn:section("通用",true)
+gn:Button("山2",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E5%B1%B1%E6%BA%90%E7%A0%81%EF%BC%88%E5%A4%B1%E4%BA%95%E5%87%9B%EF%BC%89.lua"))()
+end)
 local gn = window:Tab("音乐")
 local gn = gn:section("音乐",true)
 gn:Button("大河之剑",function()
