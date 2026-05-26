@@ -1,5 +1,8 @@
-local _5 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Yisan886/Aero/refs/heads/main/ui.lua.txt'))()
-_5:AddTheme({
+-- 重型钓鱼 纯净脚本
+local Aero = loadstring(game:HttpGet('https://raw.githubusercontent.com/Yisan886/Aero/refs/heads/main/ui.lua.txt'))()
+
+-- 主题设置
+Aero:AddTheme({
     Outline = Color3.fromHex('#FFFFFF'),
     Placeholder = Color3.fromHex('#7a7a7a'),
     Name = 'My Theme',
@@ -9,9 +12,11 @@ _5:AddTheme({
     Icon = Color3.fromHex('#a1a1aa'),
     Accent = Color3.fromHex('#18181b'),
 })
-local _call31 = _5:CreateWindow({
-    Folder = '山',
-    Title = '山      ',
+
+-- 创建窗口
+local Window = Aero:CreateWindow({
+    Folder = 'Aero',
+    Title = 'Aero',
     SideBarWidth = 180,
     Topbar = {
         Height = 44,
@@ -30,24 +35,14 @@ local _call31 = _5:CreateWindow({
     },
     BackgroundImageTransparency = 0.5,
 })
-_call31:Tag({
-    Color = Color3.fromHex('00CED1'),
-    Radius = 2,
-    Title = 'V1.03',
-})
-_call31:Tag({
-    Color = Color3.fromHex('FFD700'),
-    Radius = 2,
-    Title = '小徐',
-    Icon = 'crown',
-})
-_call31:Tag({
-    Color = Color3.fromHex('#30ff6a'),
-    Radius = 2,
-    Title = '搬运',
-    Icon = 'square-chevron-right',
-})
-local _call73 = ColorSequence.new({
+
+-- 标签
+Window:Tag({Color = Color3.fromHex('00CED1'), Radius = 2, Title = 'V1.03'})
+Window:Tag({Color = Color3.fromHex('FFD700'), Radius = 2, Title = '一散', Icon = 'crown'})
+Window:Tag({Color = Color3.fromHex('#30ff6a'), Radius = 2, Title = '搬运', Icon = 'square-chevron-right'})
+
+-- 彩虹渐变
+local Rainbow = ColorSequence.new({
     ColorSequenceKeypoint.new(0, Color3.fromHex('FF0000')),
     ColorSequenceKeypoint.new(0.16, Color3.fromHex('FFA500')),
     ColorSequenceKeypoint.new(0.33, Color3.fromHex('FFFF00')),
@@ -56,129 +51,69 @@ local _call73 = ColorSequence.new({
     ColorSequenceKeypoint.new(0.83, Color3.fromHex('4B0082')),
     ColorSequenceKeypoint.new(1, Color3.fromHex('EE82EE')),
 })
-ColorSequence.new({
-    ColorSequenceKeypoint.new(0, Color3.fromHex('30FF6A')),
-    ColorSequenceKeypoint.new(0.5, Color3.fromHex('a8ff00')),
-    ColorSequenceKeypoint.new(1, Color3.fromHex('e7ff2f')),
-})
-local _Main89 = _call31.UIElements.Main
-local _call92 = _Main89:FindFirstChild('RainbowStroke')
-_call92:Destroy()
-local _ = not _Main89:FindFirstChildOfClass('UICorner')
-local _call100 = Instance.new('UIStroke')
-_call100.Name = 'RainbowStroke'
-_call100.Thickness = 2
-_call100.Color = Color3.new(1, 1, 1)
-_call100.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-_call100.LineJoinMode = Enum.LineJoinMode.Round
-_call100.Parent = _Main89
-local _call108 = Instance.new('UIGradient')
-_call108.Name = 'GlowEffect'
-_call108.Color = _call73
-_call108.Rotation = 0
-_call108.Parent = _call100
-local _Main112 = _call31.UIElements.Main
-local _call115 = _Main112:FindFirstChild('RainbowStroke')
-local _ = not _call115:FindFirstChild('GlowEffect')
-game:GetService('RunService').Heartbeat:Connect(function(...) end)
-local _call126 = game:GetService('Lighting')
-game:GetService('TweenService')
-local _ = not _call126:FindFirstChildOfClass('BlurEffect')
-task.spawn(function(...) end)
+
+-- UI边框特效
+local Main = Window.UIElements.Main
+local OldStroke = Main:FindFirstChild('RainbowStroke')
+if OldStroke then OldStroke:Destroy() end
+
+local UIStroke = Instance.new('UIStroke')
+UIStroke.Name = 'RainbowStroke'
+UIStroke.Thickness = 2
+UIStroke.Color = Color3.new(1,1,1)
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke.Parent = Main
+
+local UIGradient = Instance.new('UIGradient')
+UIGradient.Name = 'GlowEffect'
+UIGradient.Color = Rainbow
+UIGradient.Rotation = 0
+UIGradient.Parent = UIStroke
+
+-- 全局开关
 _G.AutoFishingEnabled = false
 _G.AutoCastEnabled = false
 _G.AutoSkillEnabled = false
 _G.AutoSellEnabled = false
 _G.AutoTeleToBoss = false
-local _call135 = _call31:Tab({
-    Title = '功能',
-    Icon = 'fish',
-})
-_call31:SelectTab(1)
-_call135:Toggle({
-    Value = false,
-    Title = '自动抛竿',
-    Callback = function(...) end,
-})
-_call135:Toggle({
-    Value = false,
-    Title = '自动钓鱼',
-    Callback = function(...) end,
-})
-_call135:Toggle({
-    Value = false,
-    Title = '自动技能',
-    Callback = function(...) end,
-})
-_call135:Toggle({
-    Value = false,
-    Title = '自动卖鱼',
-    Callback = function(...) end,
-})
-_call135:Toggle({
-    Value = false,
-    Title = '自动传送Boss',
-    Callback = function(...) end,
-})
-_call135:Button({
-    Title = '阻止自动换装(必开)',
-    Callback = function(...) end,
-})
-_call135:Toggle({
-    Value = false,
-    Title = 'AFK(必开)',
-    Callback = function(...) end,
-})
-local _call153 = _call31:Tab({
-    Title = '传送',
-    Icon = 'map-pin',
-})
-Vector3.new(-283.78, 11.06, 37.06)
-Vector3.new(-1194.62, 5.57, -30.08)
-Vector3.new(-48.12, 5.88, 1234.68)
-Vector3.new(-1174.37, 7.26, 1279.27)
-Vector3.new(-63.82, 11.11, -1361.63)
-Vector3.new(-1389.85, 9.5, -1397.23)
-Vector3.new(1431.24, 11.14, -1445.49)
-Vector3.new(1123.59, 10.86, 1414.99)
-Vector3.new(1342.56, 9.64, 229.71)
-_call153:Button({
-    Title = '传送至: 初始岛屿',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 竹子岛',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 核弹岛',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 主权岛屿',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 鲨鱼岛',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 冰霜岛屿',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 橙子岛',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 钻石岛',
-    Callback = function(...) end,
-})
-_call153:Button({
-    Title = '传送至: 战场岛',
-    Callback = function(...) end,
-})
-task.spawn(function(...) end)
-task.spawn(function(...) end)
-task.spawn(function(...) end)
-task.spawn(function(...) end)
+
+-- 功能页
+local FuncTab = Window:Tab({Title = '功能', Icon = 'fish'})
+Window:SelectTab(1)
+
+FuncTab:Toggle({Value = false, Title = '自动抛竿', Callback = function(v) _G.AutoCastEnabled = v end})
+FuncTab:Toggle({Value = false, Title = '自动钓鱼', Callback = function(v) _G.AutoFishingEnabled = v end})
+FuncTab:Toggle({Value = false, Title = '自动技能', Callback = function(v) _G.AutoSkillEnabled = v end})
+FuncTab:Toggle({Value = false, Title = '自动卖鱼', Callback = function(v) _G.AutoSellEnabled = v end})
+FuncTab:Toggle({Value = false, Title = '自动传送Boss', Callback = function(v) _G.AutoTeleToBoss = v end})
+FuncTab:Button({Title = '阻止自动换装(必开)', Callback = function() end})
+FuncTab:Toggle({Value = false, Title = 'AFK(必开)', Callback = function() end})
+
+-- 传送坐标
+local Pos = {
+    初始岛屿 = Vector3.new(-283.78, 11.06, 37.06),
+    竹子岛 = Vector3.new(-1194.62, 5.57, -30.08),
+    核弹岛 = Vector3.new(-48.12, 5.88, 1234.68),
+    主权岛屿 = Vector3.new(-1174.37, 7.26, 1279.27),
+    鲨鱼岛 = Vector3.new(-63.82, 11.11, -1361.63),
+    冰霜岛屿 = Vector3.new(-1389.85, 9.5, -1397.23),
+    橙子岛 = Vector3.new(1431.24, 11.14, -1445.49),
+    钻石岛 = Vector3.new(1123.59, 10.86, 1414.99),
+    战场岛 = Vector3.new(1342.56, 9.64, 229.71),
+}
+
+-- 传送页
+local TeleTab = Window:Tab({Title = '传送', Icon = 'map-pin'})
+for name, pos in pairs(Pos) do
+    TeleTab:Button({
+        Title = '传送至: '..name,
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+        end
+    })
+end
+
+-- 后台循环
+game:GetService('RunService').Heartbeat:Connect(function() end)
+task.spawn(function() end)
