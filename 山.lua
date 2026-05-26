@@ -181,10 +181,10 @@ tab2.newButton("即将推出", "即将推出", function()
     print('Hello!')
 end)
 
-local tab3 = DrRayLibrary.newTab("大型脚本中心","ImageIdHere")
+local tab3 = DrRayLibrary.newTab("汉化脚本","ImageIdHere")
 
-tab3.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+tab3.newButton("重型钓鱼（老外）", "汉化", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E9%87%8D%E5%9E%8B%E9%92%93%E9%B1%BC.lua"))()
 end)
 
 tab3.newButton("即将推出", "即将推出", function()
