@@ -13,7 +13,7 @@ local Window = WindUI:CreateWindow({
     },
     SideBarWidth = 135,
     ScrollBarEnabled = true,
-    Background = "https://raw.Screenshot_20260526_192451_com.smile.gifmaker_edit_936115200583200.jpg",
+    Background = "https://raw.gifmaker_edit_936115200583200.jpg",
     BackgroundImageTransparency = 0.5,
 })
 
