@@ -1,7 +1,7 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/WasKKal/-/refs/heads/main/WindQW.lua"))()
 local Window = WindUI:CreateWindow({
     Title = "PLUS<font color='#FFAEC4'></font>",
-    Author = "重型钓鱼老外制作（小徐翻译）",
+    Author = "yxjvr制作",
     Folder = "HeavyFishing",
     Size = UDim2.fromOffset(500, 100),
     Transparent = true,
@@ -128,9 +128,9 @@ _G.AutoTeleToMerchant = false
 local mainTab = Window:Tab({ Title = "功能", Icon = "fish" })
 Window:SelectTab(1)
 
-mainTab:Toggle({ Title = "抛竿自动", Value = false, Callback = function(state) _G.AutoCastEnabled = state end })
-mainTab:Toggle({ Title = "钓鱼自动", Value = false, Callback = function(state) _G.AutoFishingEnabled = state end })
-mainTab:Toggle({ Title = "技能自动", Value = false, Callback = function(state) _G.AutoSkillEnabled = state end })
+mainTab:Toggle({ Title = "抛竿（自动）", Value = false, Callback = function(state) _G.AutoCastEnabled = state end })
+mainTab:Toggle({ Title = "钓鱼（自动）", Value = false, Callback = function(state) _G.AutoFishingEnabled = state end })
+mainTab:Toggle({ Title = "技能（自动）", Value = false, Callback = function(state) _G.AutoSkillEnabled = state end })
 mainTab:Toggle({ Title = "自动杆门断", Value = false, Callback = function(state) _G.AutoSkillF = state end })
 mainTab:Input({
     Title = "杆门断释放延迟",
@@ -215,7 +215,7 @@ mainTab:Toggle({
 })
 
 mainTab:Toggle({
-    Title = "自动小道士传送",
+    Title = "传送到小道士",
     Value = false,
     Callback = function(state) _G.AutoTeleToMerchant = state end
 })
