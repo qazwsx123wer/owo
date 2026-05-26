@@ -1,6 +1,6 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/WasKKal/-/refs/heads/main/WindQW.lua"))()
 local Window = WindUI:CreateWindow({
-    Title = "YG SCRIPT<font color='#FFAEC4'></font>",
+    Title = "PLUS<font color='#FFAEC4'></font>",
     Author = "重型钓鱼老外制作（小徐翻译）",
     Folder = "HeavyFishing",
     Size = UDim2.fromOffset(500, 100),
