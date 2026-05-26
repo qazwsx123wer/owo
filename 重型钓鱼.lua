@@ -1,1 +1,206 @@
-local v1 = getgenv() local v2 = getfenv() local v3 = loadstring(game:HttpGet('https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua'))() local v4 = loadstring(game:HttpGet('https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua'))() local v5 = loadstring(game:HttpGet('https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua'))() game:GetService('ReplicatedStorage') game:GetService('VirtualInputManager') game:GetService('VirtualUser') local v6 = game:GetService('Players').LocalPlayer local v7 = v6.PlayerGui v7:WaitForChild('MainGui') v1.Anchor = false v1.AutoCast = false v1.AutoSell = false v1.SellDelay = 5 v1.AutoSkill = false v1.Skills = { V = true, X = true, C = true, Z = true, } v1.AntiAFK = false v1.AutoExecute = false local v8 = Instance.new('BindableEvent绑定事件') local v9 = game:GetService('TweenService') local v10 = Instance.new('ScreenGui') v10.Name = '山Key System' v10.ResetOnSpawn = false v10.Parent = v7 local v11 = Instance.new('Frame') v11.Size = UDim2.new(0, 400, 0, 240) v11.Position = UDim2.new(0.5, -200, 0.4, -120) v11.BackgroundColor3 = Color3.fromRGB(15, 15, 15) v11.BorderSizePixel = 0 v11.ClipsDescendants = true v11.Parent = v10 local v12 = Instance.new('UICorner', v11) v12.CornerRadius = UDim.new(0, 10) local v13 = Instance.new('Frame') v13.Size = UDim2.new(1, 2, 1, 2) v13.Position = UDim2.new(0, -1, 0, -1) v13.BackgroundColor3 = Color3.fromRGB(255, 170, 33) v13.ZIndex = 0 v13.Parent = v11 local v14 = Instance.new('UICorner', v13) v14.CornerRadius = UDim.new(0, 11) local v15 = Instance.new('UIGradient', v13) local v16 = ColorSequence.new({ [1] = ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 170, 33)), [2] = ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 100, 0)), }) v15.Color = v16 local v17 = Instance.new('TextLabel') v17.Size = UDim2.new(1, 0, 0, 50) v17.BackgroundTransparency = 1 v17.TextColor3 = Color3.new(1, 1, 1) v17.Text = '钥匙系统' v17.Font = Enum.Font.GothamBold v17.TextSize = 20 v17.Parent = v11 local v18 = Instance.new('文本标签') v18.Size = UDim2.new(1, 0, 0, 20) v18.Position = UDim2.new(0, 0, 0, 45) v18.BackgroundTransparency = 1 v18.TextColor3 = Color3.fromRGB(180, 180, 180) v18.Text = '输入您的密钥以访问脚本' v18.Font = Enum.Font.GothamSemibold v18.TextSize = 12 v18.Parent = v11 local v19 = Instance.new('文本框') v19.Size = UDim2.new(0, 320, 0, 45) v19.Position = UDim2.new(0.5, -160, 0, 90) v19.BackgroundColor3 = Color3.fromRGB(25, 25, 25) v19.TextColor3 = Color3.new(1, 1, 1) v19.PlaceholderText = '在此处粘贴密钥...' v19.PlaceholderColor3 = Color3.fromRGB(100, 100, 100) v19.Font = Enum.Font.Gotham v19.TextSize = 14 v19.Parent = v11 local v20 = Instance.new('UICorner', v19) v20.CornerRadius = UDim.new(0, 8) local v21 = Instance.new('Frame') v21.Size = UDim2.new(0, 320, 0, 45) v21.Position = UDim2.new(0.5, -160, 0, 155) v21.BackgroundTransparency = 1 v21.Parent = v11 local v22 = Instance.new('UIListLayout') v22.FillDirection = Enum.FillDirection.Horizontal v22.HorizontalAlignment = Enum.HorizontalAlignment.Center v22.Padding = UDim.new(0, 15) v22.Parent = v21 local v23 = Instance.new('TextButton') v23.Size = UDim2.new(0, 150, 1, 0) v23.BackgroundColor3 = Color3.fromRGB(255, 170, 33) v23.TextColor3 = Color3.new(1, 1, 1) v23.Text = 'Check Key' v23.Font = Enum.Font.GothamBold v23.TextSize = 14 v23.AutoButtonColor = true v23.Parent = v21 local v24 = Instance.new('UICorner', v23) v24.CornerRadius = UDim.new(0, 8) local v25 = Instance.new('TextButton') v25.Size = UDim2.new(0, 150, 1, 0) v25.BackgroundColor3 = Color3.fromRGB(40, 40, 40) v25.TextColor3 = Color3.new(1, 1, 1) v25.Text = '拿钥匙' v25.Font = Enum.Font.GothamBold v25.TextSize = 14 v25.AutoButtonColor = true v25.Parent = v21 local v26 = Instance.new('UICorner', v25) v26.CornerRadius = UDim.new(0, 8) v23.MouseButton1Click:Connect(function() local _ = v19.Text v23.Text = '密钥无效' v23.BackgroundColor3 = Color3.fromRGB(200, 50, 50) task.wait(1) v23.Text = '检查钥匙' v23.BackgroundColor3 = Color3.fromRGB(255, 170, 33) end) v25.MouseButton1Click:Connect(function() setclipboard('https://dsc.gg/ez-studio') v25.Text = 'Link Copied!' task.wait(1.5) v25.Text = 'Get Key' end) v11.Position = UDim2.new(0.5, -200, -0.5, 0) local v27 = v9:Create(v11, TweenInfo.new(0.8, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0.5, -200, 0.4, -120), }) v27:Play() v8.Event:Wait() local v28 = v9:Create(v11, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.In), { Position = UDim2.new(0.5, -200, 1.2, 0), }) v28:Play() v28.Completed:Wait() v10:Destroy() v8:Destroy() local v29 = v3:CreateWindow({ SubTitle = '重量级钓鱼', Title = '山Hub', MinimizeKey = Enum.KeyCode.RightControl, Theme ='Pink', Acrylic = true, TabWidth = 160, Size = UDim2.fromOffset(560, 420), }) local v30 = v29:AddTab({ Title = '钓鱼', Icon = 'fish', }) local v31 = v29:AddTtab({ Title = '汽车销售', Icon = '购物车', }) local v32 = v29:AddTab({ Title = 'Teleport', Icon = '映射引脚', }) local v33 = v29:AddTab({ Title = 'Settings', Icon = 'settings', }) v30:AddToggle('锚', { Callback = function(v34) v1.Anchor = v34 end, Title = '锚 (锁杆)', Default = false, }) v30:AddToggle('自动投掷', { Callback = function(v35) v1.AutoCast = v35 end, Title = '自动投掷', Default = false, }) v30:AddToggle('自动技能', { Callback = function(v36) v1.AutoSkill = v36 end, Title = '自动技能', Default = false, }) v30:AddToggle('反挂机', { Callback = function(v37) v1.AntiAFK = v37 end, Title = '反挂机', Default = false, }) v30:AddToggle('自动执行', { Callback = function(v38) v1.AutoExecute = v38 local _ = v2.syn v3:Notify({ Duration = 3, Title = 'Warning警告', Content = '在工作区中找不到Heavyweight-Fishing.Lua！', }) end, Title = '自动执行', Default = false, }) v30:AddButton({ Title = '服务器跃点  (低)', Callback = function() local v39 = game:GetService('HttpService') game:GetService('远程传送服务') local v40 = v39:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. game.PlaceId .. '/servers/Public?sortOrder=Asc&limit=100')) type(v40) local _ = v40.data table.sort(v40.data, function() local _ = v40.playing local _ = v40.playing error('1号线: attempt to compare nil < nil) end) for _, _ in pairs(v40.data)do tostring(v40.id) local _ = v40.maxPlayers local _ = v40.playing error('line 1: attempt to compare nil < nil') end end, }) v30:AddDropdown('SkillPick', { Title = 'Select Skills to Press', Default = { [1] = 'Z', [2] = 'X', [3] = 'C', [4] = 'V', }, Multi = true, Callback = function(v41) v1.Skills = { V = false, X = false, C = false, Z = false, } type(v41) for _, _ in pairs(v41)do local _ = v1.Skills end end, Values = { [1] = 'Z', [2] = 'X', [3] = 'C', [4] = 'V', }, }) v31:AddToggle('AutoSell', { Callback = function(v42) v1.AutoSell = v42 end, Title = 'Auto Sell Fish', Default = false, }) v31:AddSlider('SellDelay', { Min = 1, Title = 'Sell Delay (Seconds)', Max = 120, Default = 5, Callback = function(v43) v1.SellDelay = v43 end, Rounding = 1, }) v32:AddButton({ Title = '🏍️ Island 1', Callback = function() local v44 = workspace.Map['Map 1'].House1 local v45 = v6.Character:FindFirstChild('HumanoidRootPart') v44:IsA('BasePart') v45.CFrame = (v44.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 2', Callback = function() local v46 = workspace.Map['Map 2'].House2 local v47 = v6.Character:FindFirstChild('HumanoidRootPart') v46:IsA('BasePart') v47.CFrame = (v46.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 3', Callback = function() local v48 = workspace.Map['Map 3']:GetChildren()[11] local v49 = v6.Character:FindFirstChild('HumanoidRootPart') v48:IsA('BasePart') v49.CFrame = (v48.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 4', Callback = function() local v50 = workspace.Map['Map 4'].Model local v51 = v6.Character:FindFirstChild('HumanoidRootPart') v50:IsA('BasePart') v51.CFrame = (v50.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 5', Callback = function() local v52 = workspace.Map['Map 5'].Bait local v53 = v6.Character:FindFirstChild('HumanoidRootPart') v52:IsA('BasePart') v53.CFrame = (v52.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 6', Callback = function() local v54 = workspace.Map['Map 6'].Folder:GetChildren()[33] local v55 = v6.Character:FindFirstChild('HumanoidRootPart') v54:IsA('BasePart') v55.CFrame = (v54.CFrame + Vector3.new(0, 5, 0)) v3:Notify({ Duration = 2, Title = '✅', Content = 'Teleported!', }) end, }) v32:AddButton({ Title = '🏍️ Island 7', Callback = function() local v56 = workspace.Map['Map 7'].New v6.Character:FindFirstChild('HumanoidRootPart') local _ = v56:GetChildren()[72].Grass.IsA v3:Notify({ Duration = 4, Title = '❌ Teleport failed', Content = '[string "./httplog2"]:582: <25ms: infinitelooperror>', }) end, }) v32:AddButton({ Title = '🏍️ Island 8', Callback = function() local _ = workspace.Map['Map 8']:GetChildren()[3] v6.Character:FindFirstChild('HumanoidRootPart') v3:Notify({ Duration = 4, Title = '❌ Teleport failed', Content = '[string "./httplog2"]:582: <25ms: infinitelooperror>', }) end, }) v32:AddButton({ Title = '🏍️ Island 9', Callback = function() local _ = workspace.Map['Map 9'].Folder:GetChildren()[33] v6.Character:FindFirstChild('HumanoidRootPart') v3:Notify({ Duration = 4, Title = '❌ Teleport failed', Content = '[string "./httplog2"]:582: <25ms: infinitelooperror>', }) end, }) v4:SetLibrary(v3) v4:IgnoreThemeSettings() v4:SetIgnoreIndexes({}) v4:SetFolder('EZHub/Fishing') v4:BuildConfigSection(v33) v5:SetLibrary(v3) v5:SetFolder('EZHub') v5:BuildInterfaceSection(v33) task.spawn(function() end) task.spawn(function() end) task.spawn(function() end) v6.Idled:Connect(function() end) game:GetService('RunService').RenderStepped:Connect(function() end) v29:SelectTab(1) v3:Notify({ Duration = 5, Title = 'EZ Hub', Content = 'Loaded successfully!', }) v4:LoadAutoloadConfig()
+local _5 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Yisan886/Aero/refs/heads/main/ui.lua.txt'))()
+
+_5:AddTheme({
+    Outline = Color3.fromHex('#FFFFFF'),
+    Placeholder = Color3.fromHex('#7a7a7a'),
+    Name = 'My Theme',
+    Text = Color3.fromHex('#FFFFFF'),
+    Button = Color3.fromHex('#52525b'),
+    Background = Color3.fromHex('#101010'),
+    Icon = Color3.fromHex('#a1a1aa'),
+    Accent = Color3.fromHex('#18181b'),
+})
+
+local _call31 = _5:CreateWindow({
+    Folder = 'Aero',
+    Title = 'Aero      ',
+    SideBarWidth = 180,
+    Topbar = {
+        Height = 44,
+        ButtonsType = 'Mac',
+    },
+    Background = 'https://chaton-images.s3.us-east-2.amazonaws.com/GHn9L9UJLf0XcVNyCpbG72D0rmNmBEWndPkh6CjJNya8GLnWzz1vImvt8wlJSBwv_2700x1519x1393696.jpeg',
+    OpenButton = {
+        StrokeThickness = 3,
+        Color = ColorSequence.new(Color3.fromHex('#30FF6A'), Color3.fromHex('#e7ff2f')),
+        Title = '\u{6253}\u{5f00}\u{811a}\u{672c}',
+        Enabled = true,
+        Scale = 0.9,
+        Draggable = true,
+        OnlyMobile = false,
+        CornerRadius = UDim.new(1, 0),
+    },
+    BackgroundImageTransparency = 0.5,
+})
+
+_call31:Tag({
+    Color = Color3.fromHex('00CED1'),
+    Radius = 2,
+    Title = 'V1.03',
+})
+_call31:Tag({
+    Color = Color3.fromHex('FFD700'),
+    Radius = 2,
+    Title = '\u{4f0a}\u{6563}',
+    Icon = 'crown',
+})
+_call31:Tag({
+    Color = Color3.fromHex('#30ff6a'),
+    Radius = 2,
+    Title = '\u{82cf}\u{8fbe}',
+    Icon = 'square-chevron-right',
+})
+
+local _call73 = ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, Color3.fromHex('FF0000')),
+    [2] = ColorSequenceKeypoint.new(0.16, Color3.fromHex('FFA500')),
+    [3] = ColorSequenceKeypoint.new(0.33, Color3.fromHex('FFFF00')),
+    [4] = ColorSequenceKeypoint.new(0.5, Color3.fromHex('00FF00')),
+    [5] = ColorSequenceKeypoint.new(0.66, Color3.fromHex('0000FF')),
+    [6] = ColorSequenceKeypoint.new(0.83, Color3.fromHex('4B0082')),
+    [7] = ColorSequenceKeypoint.new(1, Color3.fromHex('EE82EE')),
+})
+
+ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, Color3.fromHex('30FF6A')),
+    [2] = ColorSequenceKeypoint.new(0.5, Color3.fromHex('a8ff00')),
+    [3] = ColorSequenceKeypoint.new(1, Color3.fromHex('e7ff2f')),
+})
+
+local _Main89 = _call31.UIElements.Main
+local _call92 = _Main89:FindFirstChild('RainbowStroke')
+
+_call92:Destroy()
+
+local _ = not _Main89:FindFirstChildOfClass('UICorner')
+local _call100 = Instance.new('UIStroke')
+
+_call100.Name = 'RainbowStroke'
+_call100.Thickness = 2
+_call100.Color = Color3.new(1, 1, 1)
+_call100.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+_call100.LineJoinMode = Enum.LineJoinMode.Round
+_call100.Parent = _Main89
+
+local _call108 = Instance.new('UIGradient')
+
+_call108.Name = 'GlowEffect'
+_call108.Color = _call73
+_call108.Rotation = 0
+_call108.Parent = _call100
+
+local _Main112 = _call31.UIElements.Main
+local _call115 = _Main112:FindFirstChild('RainbowStroke')
+local _ = not _call115:FindFirstChild('GlowEffect')
+
+game:GetService('RunService').Heartbeat:Connect(function(...) end)
+
+local _call126 = game:GetService('Lighting')
+
+game:GetService('TweenService')
+
+local _ = not _call126:FindFirstChildOfClass('BlurEffect')
+
+task.spawn(function(...) end)
+
+_G.AutoFishingEnabled = false
+_G.AutoCastEnabled = false
+_G.AutoSkillEnabled = false
+_G.AutoSellEnabled = false
+_G.AutoTeleToBoss = false
+
+local _call135 = _call31:Tab({
+    Title = '\u{529f}\u{80fd}',
+    Icon = 'fish',
+})
+
+_call31:SelectTab(1)
+_call135:Toggle({
+    Value = false,
+    Title = '\u{81ea}\u{52a8}\u{629b}\u{7aff}',
+    Callback = function(...) end,
+})
+_call135:Toggle({
+    Value = false,
+    Title = '\u{81ea}\u{52a8}\u{9493}\u{9c7c}',
+    Callback = function(...) end,
+})
+_call135:Toggle({
+    Value = false,
+    Title = '\u{81ea}\u{52a8}\u{6280}\u{80fd}',
+    Callback = function(...) end,
+})
+_call135:Toggle({
+    Value = false,
+    Title = '\u{81ea}\u{52a8}\u{5356}\u{9c7c}',
+    Callback = function(...) end,
+})
+_call135:Toggle({
+    Value = false,
+    Title = '\u{81ea}\u{52a8}\u{4f20}\u{9001}Boss',
+    Callback = function(...) end,
+})
+_call135:Button({
+    Title = '\u{963b}\u{6b62}\u{81ea}\u{52a8}\u{6362}\u{670d}(\u{5fc5}\u{5f00})',
+    Callback = function(...) end,
+})
+_call135:Toggle({
+    Value = false,
+    Title = 'AFK(\u{5fc5}\u{5f00})',
+    Callback = function(...) end,
+})
+
+local _call153 = _call31:Tab({
+    Title = '\u{4f20}\u{9001}',
+    Icon = 'map-pin',
+})
+
+Vector3.new(-283.78, 11.06, 37.06)
+Vector3.new(-1194.62, 5.57, -30.08)
+Vector3.new(-48.12, 5.88, 1234.68)
+Vector3.new(-1174.37, 7.26, 1279.27)
+Vector3.new(-63.82, 11.11, -1361.63)
+Vector3.new(-1389.85, 9.5, -1397.23)
+Vector3.new(1431.24, 11.14, -1445.49)
+Vector3.new(1123.59, 10.86, 1414.99)
+Vector3.new(1342.56, 9.64, 229.71)
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{521d}\u{59cb}\u{5c9b}\u{5c7f}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{7af9}\u{5b50}\u{5c9b}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{6838}\u{5f39}\u{5c9b}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{4e3b}\u{6743}\u{5c9b}\u{5c7f}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{9c88}\u{9c7c}\u{5c9b}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{51b0}\u{971c}\u{5c9b}\u{5c7f}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{6930}\u{5b50}\u{5c9b}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{7425}\u{73c0}\u{5c9b}',
+    Callback = function(...) end,
+})
+_call153:Button({
+    Title = '\u{4f20}\u{9001}\u{81f3}: \u{6218}\u{573a}\u{5c9b}',
+    Callback = function(...) end,
+})
+task.spawn(function(...) end)
+task.spawn(function(...) end)
+task.spawn(function(...) end)
+task.spawn(function(...) end)
