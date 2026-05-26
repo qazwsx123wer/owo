@@ -18,7 +18,7 @@ local Window = WindUI:CreateWindow({
 })
 
 Window:EditOpenButton({
-    Title = "YG SCRIPT<font color='#FFAEC4'></font>",
+    Title = "PLUS<font color='#FFAEC4'></font>",
     CornerRadius = UDim.new(16,16),
     StrokeThickness = 2.5,
     Color = ColorSequence.new(
