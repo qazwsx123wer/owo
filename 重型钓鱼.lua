@@ -1,4 +1,4 @@
-local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/WasKKal/-/refs/heads/main/WindQW.lua"))()
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local Window = WindUI:CreateWindow({
     Title = "PLUS<font color='#FFAEC4'></font>",
     Author = "USApl制作",
