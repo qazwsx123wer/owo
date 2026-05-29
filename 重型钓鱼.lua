@@ -1,6 +1,6 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/WasKKal/-/refs/heads/main/WindQW.lua"))()
 local Window = WindUI:CreateWindow({
-    Title = "PL  USA<font color='#FFAEC4'></font>",
+    Title = "PL USA<font color='#FFAEC4'></font>",
     Author = "USApl制作",
     Folder = "HeavyFishing",
     Size = UDim2.fromOffset(500, 100),
@@ -18,7 +18,7 @@ local Window = WindUI:CreateWindow({
 })
 
 Window:EditOpenButton({
-    Title = "PL  USA<font color='#FFAEC4'></font>",
+    Title = "PL USA<font color='#FFAEC4'></font>",
     CornerRadius = UDim.new(16,16),
     StrokeThickness = 2.5,
     Color = ColorSequence.new(
