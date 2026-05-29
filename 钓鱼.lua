@@ -1,7 +1,7 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/WasKKal/-/refs/heads/main/WindQW.lua"))()
 local Window = WindUI:CreateWindow({
-    Title = "PL  USA<font color='#FFAEC4'></font>",
-    Author = "USApl制作",
+    Title = "YG SCRIPT<font color='#FFAEC4'></font>",
+    Author = "重型钓鱼（伊散制作）",
     Folder = "HeavyFishing",
     Size = UDim2.fromOffset(500, 100),
     Transparent = true,
@@ -13,12 +13,12 @@ local Window = WindUI:CreateWindow({
     },
     SideBarWidth = 135,
     ScrollBarEnabled = true,
-    Background = "https://github.com/WasKKal/OnlyJumpToOther/raw/refs/heads/main/D7666667B687C02DEED504C9860AFBC0.png",
+    Background = "https://raw.githubusercontent.com/weitianlee52-ai/YGGGGGGG/refs/heads/main/image_download_1776846735558.jpg",
     BackgroundImageTransparency = 0.5,
 })
 
 Window:EditOpenButton({
-    Title = "PL  USA<font color='#FFAEC4'></font>",
+    Title = "YG SCRIPT<font color='#FFAEC4'></font>",
     CornerRadius = UDim.new(16,16),
     StrokeThickness = 2.5,
     Color = ColorSequence.new(
@@ -128,12 +128,12 @@ _G.AutoTeleToMerchant = false
 local mainTab = Window:Tab({ Title = "功能", Icon = "fish" })
 Window:SelectTab(1)
 
-mainTab:Toggle({ Title = "抛竿（自动）", Value = false, Callback = function(state) _G.AutoCastEnabled = state end })
-mainTab:Toggle({ Title = "钓鱼（自动）", Value = false, Callback = function(state) _G.AutoFishingEnabled = state end })
-mainTab:Toggle({ Title = "技能（自动）", Value = false, Callback = function(state) _G.AutoSkillEnabled = state end })
-mainTab:Toggle({ Title = "自动杆门断", Value = false, Callback = function(state) _G.AutoSkillF = state end })
+mainTab:Toggle({ Title = "自动抛竿", Value = false, Callback = function(state) _G.AutoCastEnabled = state end })
+mainTab:Toggle({ Title = "自动钓鱼", Value = false, Callback = function(state) _G.AutoFishingEnabled = state end })
+mainTab:Toggle({ Title = "自动技能", Value = false, Callback = function(state) _G.AutoSkillEnabled = state end })
+mainTab:Toggle({ Title = "杆门断自动释放", Value = false, Callback = function(state) _G.AutoSkillF = state end })
 mainTab:Input({
-    Title = "杆门断释放延迟",
+    Title = "杆门断释放延迟时间",
     Placeholder = "默认30秒",
     Value = "30",
     Callback = function(text)
@@ -143,8 +143,8 @@ mainTab:Input({
         end
     end
 })
-mainTab:Toggle({ Title = "卖鱼自动", Value = false, Callback = function(state) _G.AutoSellEnabled = state end })
-mainTab:Toggle({ Title = "传送Boss自动", Value = false, Callback = function(state) _G.AutoTeleToBoss = state end })
+mainTab:Toggle({ Title = "自动卖鱼", Value = false, Callback = function(state) _G.AutoSellEnabled = state end })
+mainTab:Toggle({ Title = "自动传送Boss", Value = false, Callback = function(state) _G.AutoTeleToBoss = state end })
 
 local autoDeleteAFK = false
 mainTab:Toggle({
@@ -198,7 +198,7 @@ mainTab:Toggle({
 local bypassCount = 0
 local afkConnection = nil
 mainTab:Toggle({
-    Title = "反挂机",
+    Title = "AFK(必开)",
     Value = false,
     Callback = function(state)
         if state then
@@ -215,7 +215,7 @@ mainTab:Toggle({
 })
 
 mainTab:Toggle({
-    Title = "传送到小道士",
+    Title = "自动传送小道士",
     Value = false,
     Callback = function(state) _G.AutoTeleToMerchant = state end
 })
@@ -422,4 +422,119 @@ end)
 local SnowModule = {}
 local SnowFolder = Instance.new("Folder")
 SnowFolder.Name = "SnowEffects"
-SnowFolder.Parent = works
+SnowFolder.Parent = workspace
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local Camera = workspace.CurrentCamera
+local SnowSettings = {
+    Speed = 4,
+    Density = 60,
+    Size = Vector2.new(0.8, 0.8),
+    Lifetime = 8,
+    WindX = 0.5
+}
+local SnowEnabled = false
+local SnowConnections = {}
+local ActiveSnowflakes = {}
+local function CreateSnowflake()
+    local snow = Instance.new("Part")
+    snow.Name = "Snowflake"
+    snow.Size = Vector3.new(SnowSettings.Size.X, 0.1, SnowSettings.Size.Y)
+    snow.Anchored = true
+    snow.CanCollide = false
+    snow.Transparency = 0.2
+    snow.BrickColor = BrickColor.new("White")
+    snow.Material = Enum.Material.SmoothPlastic
+    snow.Parent = SnowFolder
+    local billboard = Instance.new("BillboardGui")
+    billboard.Size = UDim2.new(0, 20, 0, 20)
+    billboard.AlwaysOnTop = true
+    billboard.Parent = snow
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 1, 0)
+    frame.BackgroundColor3 = Color3.new(1, 1, 1)
+    frame.BackgroundTransparency = 0.1
+    frame.BorderSizePixel = 0
+    frame.Parent = billboard
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(1, 0)
+    corner.Parent = frame
+    return snow
+end
+local function SpawnSnowflake()
+    if not Camera then return end
+    local camCFrame = Camera.CFrame
+    local spawnX = math.random(-50, 50) + camCFrame.X
+    local spawnZ = math.random(-50, 50) + camCFrame.Z
+    local spawnY = camCFrame.Y + 30
+    local snowflake = CreateSnowflake()
+    snowflake.CFrame = CFrame.new(spawnX, spawnY, spawnZ)
+    table.insert(ActiveSnowflakes, snowflake)
+    local tweenInfo = TweenInfo.new(
+        SnowSettings.Lifetime,
+        Enum.EasingStyle.Linear,
+        Enum.EasingDirection.InOut,
+        0,
+        false,
+        0
+    )
+    local endPos = Vector3.new(
+        spawnX + (math.random() * SnowSettings.WindX * 20),
+        camCFrame.Y - 20,
+        spawnZ + (math.random() * SnowSettings.WindX * 10)
+    )
+    local tween = TweenService:Create(snowflake, tweenInfo, {CFrame = CFrame.new(endPos)})
+    tween:Play()
+    task.delay(SnowSettings.Lifetime, function()
+        if snowflake:IsDescendantOf(game) then
+            snowflake:Destroy()
+            for i, v in ipairs(ActiveSnowflakes) do
+                if v == snowflake then
+                    table.remove(ActiveSnowflakes, i)
+                    break
+                end
+            end
+        end
+    end)
+end
+local function SnowLoop()
+    if #ActiveSnowflakes < SnowSettings.Density then
+        for i = 1, math.floor(SnowSettings.Density / 10) do
+            task.spawn(SpawnSnowflake)
+        end
+    end
+end
+function SnowModule:ToggleSnow(enabled)
+    SnowEnabled = enabled
+    if SnowEnabled then
+        SnowConnections[1] = RunService.RenderStepped:Connect(SnowLoop)
+    else
+        for _, conn in pairs(SnowConnections) do
+            conn:Disconnect()
+        end
+        SnowConnections = {}
+        for _, snow in pairs(ActiveSnowflakes) do
+            if snow:IsDescendantOf(game) then
+                snow:Destroy()
+            end
+        end
+        ActiveSnowflakes = {}
+    end
+end
+function SnowModule:Destroy()
+    self:ToggleSnow(false)
+    SnowFolder:Destroy()
+end
+
+local snowToggle = mainTab:Toggle({
+    Title = "启用下雪效果",
+    Value = false,
+    Callback = function(state)
+        SnowModule:ToggleSnow(state)
+    end
+})
+
+Window:OnClose(function()
+    SnowModule:Destroy()
+    print("UI closed.")
+end)
