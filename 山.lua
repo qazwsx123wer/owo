@@ -187,7 +187,7 @@ tab3.newButton("重型钓鱼（老外）", "汉化", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/qazwsx123wer/owo/refs/heads/main/%E9%87%8D%E5%9E%8B%E9%92%93%E9%B1%BC.lua"))()
 end)
 
-tab3.newButton("即将推出", "即将推出", function()
+tab3.newButton("战争大亨", "汉化老外", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%88%98%E4%BA%89%E5%A4%A7%E4%BA%A8.txt"))()
 end)
 
