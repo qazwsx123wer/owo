@@ -15,6 +15,10 @@ tab1.newButton("透视脚本", "透视所有玩家", function()
     return
 end
 
+tab1.newButton("翻译脚本", "111", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/dream6-e/rbx/refs/heads/main/%E7%BF%BB%E8%AF%91%E8%84%9A%E6%9C%AC.lua"))()
+end
+	
 _G.Reantheajfdfjdgse = "susan"
 
 local coregui = game:GetService("CoreGui")
