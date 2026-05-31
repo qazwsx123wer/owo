@@ -10,7 +10,7 @@ tab1.newButton("飞行脚本", "飞行可隐藏", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
 end)
 
-tab1.newButton("翻译脚本", "111", function()
+tab1.newButton("翻译脚本", "翻译脚本的", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/dream6-e/rbx/refs/heads/main/%E7%BF%BB%E8%AF%91%E8%84%9A%E6%9C%AC.lua"))()
 end)
 
