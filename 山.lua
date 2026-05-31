@@ -188,7 +188,7 @@ tab3.newButton("重型钓鱼（老外）", "汉化", function()
 end)
 
 tab3.newButton("即将推出", "即将推出", function()
-    print('Hello!')
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%88%98%E4%BA%89%E5%A4%A7%E4%BA%A8.txt"))()
 end)
 
 tab3.newButton("即将推出", "即将推出", function()
