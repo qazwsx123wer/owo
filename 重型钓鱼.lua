@@ -264,7 +264,7 @@ end
 local locations = {
     {Name = "初始岛屿", Coords = Vector3.new(-283.78, 11.06, 37.06)},
     {Name = "竹子岛", Coords = Vector3.new(-1194.62, 5.57, -30.08)},
-    {Name = "核弹岛", Coords = Vector3.new(30.12, 6.88, 1234.68)},
+    {Name = "核弹岛", Coords = Vector3.new(70.12, 6.88, 1234.68)},
     {Name = "主权岛屿", Coords = Vector3.new(-1174.37, 7.26, 1279.27)},
     {Name = "鲈鱼岛", Coords = Vector3.new(-63.82, 11.11, -1361.63)},
     {Name = "冰霜岛屿", Coords = Vector3.new(-1389.85, 9.50, -1397.23)},
